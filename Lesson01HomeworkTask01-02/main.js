@@ -3,12 +3,16 @@ var memories = [
         value: 64,
         options: [
             {
-                color: "red",
+                color: "black",
                 price: 500
             },
             {
-                color: "green",
+                color: "silver",
                 price: 520
+            },
+            {
+                color: "gold",
+                price: 540
             }
         ]
     },
@@ -16,12 +20,16 @@ var memories = [
         value: 128,
         options: [
             {
-                color: "red",
+                color: "black",
                 price: 800
             },
             {
-                color: "green",
+                color: "silver",
                 price: 830
+            },
+            {
+                color: "gold",
+                price: 860
             }
         ]
     },
@@ -29,12 +37,16 @@ var memories = [
         value: 256,
         options: [
             {
-                color: "red",
+                color: "black",
                 price: 1200
             },
             {
-                color: "green",
+                color: "silver",
                 price: 1240
+            },
+            {
+                color: "gold",
+                price: 1280
             }
         ]
     }
@@ -70,9 +82,9 @@ if (typeof position !== "undefined") {
             break;
         }
 
-        for (var i = 0; i < memories[position].options.length; i++) {
-            if (color === memories[position].options[i].color) {
-                price = memories[position].options[i].price;
+        for (var j = 0; j < memories[position].options.length; j++) {
+            if (color === memories[position].options[j].color) {
+                price = memories[position].options[j].price;
                 break;
             }
         }
@@ -80,7 +92,11 @@ if (typeof position !== "undefined") {
 }
 
 if (typeof price === "undefined") {
+    document.write("<img src='./img/default.png'>");
+    document.write("<br>");
     document.write("Операция отменена пользователем");
 } else {
+    document.write("<img src='./img/" + color + ".png'>");
+    document.write("<br>");
     document.write(price);
 }
