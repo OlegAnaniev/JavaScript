@@ -1,0 +1,8 @@
+#display {
+    width: 160px;
+    height: 50px;
+    border: 1px solid black;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+}
