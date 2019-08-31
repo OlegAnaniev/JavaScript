@@ -10,15 +10,14 @@
         return sum === initialNumber;
     }
 
-    function getDigits(initialNumber) {
+    function getDigits(number) {
         const digits = new Array();
-        let tempNumber = initialNumber;
         let digit;
 
-        while (tempNumber !== 0) {
-            digit = tempNumber % 10;
+        while (number !== 0) {
+            digit = number % 10;
             digits.push(digit);
-            tempNumber = (tempNumber - digit) / 10;
+            number = (number - digit) / 10;
         }
 
         return digits;
