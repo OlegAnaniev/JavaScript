@@ -1,13 +1,11 @@
 (function () {
-    function isNarcissistic (initialNumber) {
-        const digits = getDigits(initialNumber);
-        let sum = 0;
+    function isNarcissistic (number) {
+        const digits = getDigits(number);
+        const reducer = (sum, value) => {
+            return sum + Math.pow(value, digits.length);
+        };
 
-        for (let i = 0; i < digits.length; i++) {
-            sum += Math.pow(digits[i], digits.length);
-        }
-
-        return sum === initialNumber;
+        return digits.reduce(reducer, 0) === number;
     }
 
     function getDigits(number) {
@@ -23,7 +21,7 @@
         return digits;
     }
 
-    console.log(isNarcissistic(123));
-    console.log(isNarcissistic(153));
-    console.log(isNarcissistic(1634));
+    console.log("123 " + isNarcissistic(123)); //false
+    console.log("153 " + isNarcissistic(153)); //true
+    console.log("1634 " + isNarcissistic(1634)); //true
 })();
