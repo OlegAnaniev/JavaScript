@@ -1,0 +1,13 @@
+#area {
+    position: relative;
+    width: 80vw;
+    height: 95vh;
+    margin: 0 auto;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    background-color: red;
+}
